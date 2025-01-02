@@ -1,0 +1,18 @@
+@use "../sass-toolkit" as st;
+
+@mixin default {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+}
+
+@mixin note {
+  font-size: st.px2rem(15);
+  line-height: 1.7; // or st.px2rem(26)
+}
+
+@mixin input-field {
+  font-size: st.px2rem(14);
+  font-weight: 600;
+  line-height: 1.85;
+  letter-spacing: st.px2rem(0.25);
+}

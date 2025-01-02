@@ -1,0 +1,16 @@
+@use "../sass-toolkit" as st;
+@use "../generic";
+
+.trial-note {
+  //Appearance
+  background-color: var(--color-background-note);
+  border-radius: st.px2rem(10);
+  box-shadow: var(--box-shadow-note);
+  //Layout
+  padding: 1.13em 20.45%;
+  margin: 2em 0; //temp
+  // Typography
+  @include generic.font-note;
+  color: var(--color-text-note);
+  text-align: center;
+}

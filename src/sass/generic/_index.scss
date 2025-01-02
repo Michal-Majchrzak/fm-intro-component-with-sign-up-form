@@ -1,0 +1,27 @@
+@use "fonts";
+@forward "fonts" as font-*;
+
+$colors: (
+  "background-note": hsl(248, 33%, 49%),
+  "background-btn" : hsl(154, 59%, 51%),
+  "background-btn-hover": hsl(154, 65%, 68%),
+  "border-input": hsl(0, 0%, 87%),
+  "text-note": hsl(0, 0%, 100%),
+  "text-input": hsla(248, 9%, 26%, 0.75),
+);
+
+:root {
+  // Custom properties - colors
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+
+  --box-shadow-note: 0 8px 0 0 hsla(0, 0%, 0%, 0.15);
+  --box-shadow-btn: inset 0 -4px 0 0 hsla(0, 0%, 0%, 0.09);
+
+  @include fonts.default;
+}
+
+.text-bold {
+  font-weight: 700;
+}

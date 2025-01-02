@@ -1,0 +1,26 @@
+@use "../sass-toolkit" as st;
+@use "../generic";
+
+.btn {
+  //Appearance
+  background-color: var(--color-background-btn);
+  border-radius: st.px2rem(5);
+  border: none;
+  box-shadow: var(--box-shadow-btn);
+  transition: background-color 250ms ease-in;
+  //Layout
+  width: 100%;
+  padding: 1em; // for mobie 15.4% desktop 29.5%
+  //Typography
+  @include generic.font-note;
+  font-weight: 600;
+  letter-spacing: st.px2rem(1);
+  color: var(--color-text-note);
+  text-transform: uppercase;
+
+  &:hover {
+    // Appearance
+    cursor: pointer;
+    background-color: var(--color-background-btn-hover);
+  }
+}
