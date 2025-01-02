@@ -1,3 +1,4 @@
+@use "../sass-toolkit" as st;
 @use "fonts";
 @forward "fonts" as font-*;
 
@@ -6,8 +7,11 @@ $colors: (
   "background-btn" : hsl(154, 59%, 51%),
   "background-btn-hover": hsl(154, 65%, 68%),
   "border-input": hsl(0, 0%, 87%),
-  "text-note": hsl(0, 0%, 100%),
-  "text-input": hsla(248, 9%, 26%, 0.75),
+  "text-main": hsl(0, 0%, 100%),
+  "text-input-placeholder": hsla(248, 9%, 26%, 0.75),
+  "text-input": hsl(248, 9%, 26%),
+  "text-accent": hsl(0, 100%, 74%),
+  "text-terms": hsl(247, 25%, 77%),
 );
 
 :root {
@@ -15,13 +19,49 @@ $colors: (
   @each $name, $color in $colors {
     --color-#{$name}: #{$color};
   }
-
+  // shadows
   --box-shadow-note: 0 8px 0 0 hsla(0, 0%, 0%, 0.15);
   --box-shadow-btn: inset 0 -4px 0 0 hsla(0, 0%, 0%, 0.09);
-
+  // font
   @include fonts.default;
+}
+
+body {
+  background-image: url("../../../assets/images/bg-intro-desktop.png");
+  background-color: var(--color-text-accent);
+
+  padding: st.px2rem(88) 1.5rem 0;
+  color: var(--color-text-main);
 }
 
 .text-bold {
   font-weight: 700;
+}
+.text-accent {
+  color: var(--color-text-accent);
+}
+
+.sign-up {
+  // display: grid;
+  // grid-template-columns: minmax(min-content, 100%);
+  // gap: st.px2rem(30);
+  // margin: 0 auto;
+  // max-width: st.px2rem(1110);
+}
+
+.container {
+  margin-bottom: 4rem;
+}
+
+.title {
+  // Layout
+  margin-bottom: 1.5rem;
+  // Typography
+  @include fonts.main-heading;
+  text-align: center;
+}
+
+.description {
+  @include fonts.description;
+  text-align: center;
 }

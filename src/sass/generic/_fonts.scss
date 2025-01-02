@@ -16,3 +16,22 @@
   line-height: 1.85;
   letter-spacing: st.px2rem(0.25);
 }
+
+@mixin terms-and-services {
+  font-size: st.px2rem(11);
+  font-weight: 500;
+  line-height: 1.9;
+}
+
+@mixin main-heading {
+  font-size: st.linear-func-clamp(28, 375, 50, 1440); // 28; 50
+  font-weight: 700;
+  line-height: st.linear-func-clamp(36, 375, 55, 1440); // 36 ; 55
+  letter-spacing: st.px2rem(-0.3);
+}
+
+@mixin description {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625;
+}

@@ -15,7 +15,7 @@
   @include generic.font-note;
   font-weight: 600;
   letter-spacing: st.px2rem(1);
-  color: var(--color-text-note);
+  color: inherit;
   text-transform: uppercase;
 
   &:hover {

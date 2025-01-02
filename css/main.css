@@ -3,16 +3,66 @@
   --color-background-btn: hsl(154, 59%, 51%);
   --color-background-btn-hover: hsl(154, 65%, 68%);
   --color-border-input: hsl(0, 0%, 87%);
-  --color-text-note: hsl(0, 0%, 100%);
-  --color-text-input: hsla(248, 9%, 26%, 0.75);
+  --color-text-main: hsl(0, 0%, 100%);
+  --color-text-input-placeholder: hsla(248, 9%, 26%, 0.75);
+  --color-text-input: hsl(248, 9%, 26%);
+  --color-text-accent: hsl(0, 100%, 74%);
+  --color-text-terms: hsl(247, 25%, 77%);
   --box-shadow-note: 0 8px 0 0 hsla(0, 0%, 0%, 0.15);
   --box-shadow-btn: inset 0 -4px 0 0 hsla(0, 0%, 0%, 0.09);
   font-family: "Poppins", serif;
   font-weight: 400;
 }
 
+body {
+  background-image: url("../../../assets/images/bg-intro-desktop.png");
+  background-color: var(--color-text-accent);
+  padding: 5.5rem 1.5rem 0;
+  color: var(--color-text-main);
+}
+
 .text-bold {
   font-weight: 700;
+}
+
+.text-accent {
+  color: var(--color-text-accent);
+}
+
+.container {
+  margin-bottom: 4rem;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.75rem, 2.0657276995vw + 1.2658450704rem, 3.125rem);
+  font-weight: 700;
+  line-height: clamp(2.25rem, 1.7840375587vw + 1.8318661972rem, 3.4375rem);
+  letter-spacing: -0.01875rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625;
+  text-align: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.625rem;
+  box-shadow: var(--box-shadow-note);
+  padding: 1.5rem;
+}
+.card__terms-and-services {
+  padding: 0 0.9375rem;
+  margin-top: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.9;
+  text-align: center;
+  color: var(--color-text-terms);
 }
 
 .trial-note {
@@ -20,10 +70,9 @@
   border-radius: 0.625rem;
   box-shadow: var(--box-shadow-note);
   padding: 1.13em 20.45%;
-  margin: 2em 0;
+  margin-bottom: 1.5rem;
   font-size: 0.9375rem;
   line-height: 1.7;
-  color: var(--color-text-note);
   text-align: center;
 }
 
@@ -39,7 +88,7 @@
   line-height: 1.7;
   font-weight: 600;
   letter-spacing: 0.0625rem;
-  color: var(--color-text-note);
+  color: inherit;
   text-transform: uppercase;
 }
 .btn:hover {
@@ -61,6 +110,12 @@
   line-height: 1.85;
   letter-spacing: 0.015625rem;
   color: var(--color-text-input);
+}
+.form .form-item::placeholder {
+  color: var(--color-text-input-placeholder);
+}
+.form .form-item:focus-visible {
+  outline: 0.0625rem solid var(--color-background-note);
 }
 
 /*# sourceMappingURL=main.css.map */

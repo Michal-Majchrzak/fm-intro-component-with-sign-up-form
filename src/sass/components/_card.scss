@@ -1,0 +1,21 @@
+@use "../sass-toolkit" as st;
+@use "../generic";
+
+.card {
+  // Appearance
+  background-color: white; // use var 
+  border-radius: st.px2rem(10);
+  box-shadow: var(--box-shadow-note);
+  // Layout
+  padding: 1.5rem;
+
+  &__terms-and-services {
+    // Layout
+    padding: 0 st.px2rem(15);
+    margin-top: .5rem;
+    // Typography
+    @include generic.font-terms-and-services;
+    text-align: center;
+    color: var(--color-text-terms);
+  }
+}
