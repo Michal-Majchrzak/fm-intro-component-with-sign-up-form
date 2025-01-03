@@ -1,2 +1,22 @@
+@use "sass-toolkit" as st;
 @use "generic";
 @use "components";
+
+@media (min-width: st.px2rem(840)) {
+  
+  .container {
+    margin: 0;
+    align-self: center;
+  }
+  .title, .description {
+    text-align: left;
+  }
+  
+  .sign-up {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    gap: st.px2rem(30);
+    max-width: st.px2rem(1110);
+    margin: 0 auto;
+  }
+}

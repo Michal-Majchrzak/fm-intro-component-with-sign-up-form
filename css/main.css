@@ -1,3 +1,28 @@
+/* Based on https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* reset end */
 :root {
   --color-background-note: hsl(248, 33%, 49%);
   --color-background-btn: hsl(154, 59%, 51%);
@@ -16,8 +41,12 @@
 
 body {
   background-image: url("../../../assets/images/bg-intro-desktop.png");
+  background-position-x: 14px;
   background-color: var(--color-text-accent);
-  padding: 5.5rem 1.5rem 0;
+  display: flex;
+  align-items: center;
+  padding: clamp(5.5rem, 3.0985915493vw + 4.7737676056rem, 7.5625rem) clamp(1.5rem, 13.1455399061vw + -1.5809859155rem, 10.25rem);
+  min-height: 100dvh;
   color: var(--color-text-main);
 }
 
@@ -34,7 +63,7 @@ body {
 }
 
 .title {
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1.5rem, 0.7511737089vw + 1.323943662rem, 2rem);
   font-size: clamp(1.75rem, 2.0657276995vw + 1.2658450704rem, 3.125rem);
   font-weight: 700;
   line-height: clamp(2.25rem, 1.7840375587vw + 1.8318661972rem, 3.4375rem);
@@ -49,18 +78,22 @@ body {
   text-align: center;
 }
 
+.sign-up {
+  width: 100%;
+}
+
 .card {
   background-color: white;
   border-radius: 0.625rem;
   box-shadow: var(--box-shadow-note);
-  padding: 1.5rem;
+  padding: clamp(1.5rem, 1.5023474178vw + 1.1478873239rem, 2.5rem);
 }
 .card__terms-and-services {
   padding: 0 0.9375rem;
   margin-top: 0.5rem;
   font-size: 0.6875rem;
   font-weight: 500;
-  line-height: 1.9;
+  line-height: clamp(1.3125rem, 0.4694835681vw + 1.2024647887rem, 1.625rem);
   text-align: center;
   color: var(--color-text-terms);
 }
@@ -99,12 +132,13 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(1rem, 0.3755868545vw + 0.911971831rem, 1.25rem);
 }
 .form .form-item {
   border-radius: 0.3125rem;
   border: 0.0625rem solid var(--color-border-input);
-  padding: 1em 1.3em;
+  padding: 1em clamp(1.25rem, 1.1267605634vw + 0.985915493rem, 2rem);
+  width: 100%;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.85;
@@ -116,6 +150,50 @@ body {
 }
 .form .form-item:focus-visible {
   outline: 0.0625rem solid var(--color-background-note);
+}
+.form .error {
+  position: relative;
+}
+.form .error .form-item {
+  outline: 0.125rem solid var(--color-text-accent);
+  color: var(--color-text-accent);
+}
+.form .error::before {
+  content: url("../assets/images/icon-error.svg");
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1.6875rem;
+}
+.form .error::after {
+  content: "Field cannot be empty";
+  display: block;
+  padding-top: 0.25rem;
+  width: 100%;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: clamp(1.3125rem, 0.4694835681vw + 1.2024647887rem, 1.625rem);
+  line-height: normal;
+  color: var(--color-text-accent);
+  font-style: italic;
+  text-align: right;
+}
+
+@media (min-width: 52.5rem) {
+  .container {
+    margin: 0;
+    align-self: center;
+  }
+  .title, .description {
+    text-align: left;
+  }
+  .sign-up {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+    gap: 1.875rem;
+    max-width: 69.375rem;
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

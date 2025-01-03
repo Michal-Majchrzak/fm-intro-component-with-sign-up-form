@@ -20,7 +20,7 @@
 @mixin terms-and-services {
   font-size: st.px2rem(11);
   font-weight: 500;
-  line-height: 1.9;
+  line-height: st.linear-func-clamp(21, 375, 26, 1440); // 21 26 
 }
 
 @mixin main-heading {
@@ -31,7 +31,7 @@
 }
 
 @mixin description {
-  font-size: 1rem;
+  font-size: st.px2rem(16);
   font-weight: 500;
   line-height: 1.625;
 }

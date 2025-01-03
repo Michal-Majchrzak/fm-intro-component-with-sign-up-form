@@ -14,6 +14,8 @@ $colors: (
   "text-terms": hsl(247, 25%, 77%),
 );
 
+@include st.reset-add;
+
 :root {
   // Custom properties - colors
   @each $name, $color in $colors {
@@ -27,10 +29,16 @@ $colors: (
 }
 
 body {
+  // Appearance
   background-image: url("../../../assets/images/bg-intro-desktop.png");
+  background-position-x: 14px;
   background-color: var(--color-text-accent);
-
-  padding: st.px2rem(88) 1.5rem 0;
+  // Layout
+  display: flex;
+  align-items: center;
+  padding: st.linear-func-clamp(88, 375, 121, 1440) st.linear-func-clamp(24, 375, 164, 1440);
+  min-height: 100dvh;
+  // Typography
   color: var(--color-text-main);
 }
 
@@ -41,21 +49,13 @@ body {
   color: var(--color-text-accent);
 }
 
-.sign-up {
-  // display: grid;
-  // grid-template-columns: minmax(min-content, 100%);
-  // gap: st.px2rem(30);
-  // margin: 0 auto;
-  // max-width: st.px2rem(1110);
-}
-
 .container {
-  margin-bottom: 4rem;
+  margin-bottom: st.px2rem(64);
 }
 
 .title {
   // Layout
-  margin-bottom: 1.5rem;
+  margin-bottom: st.linear-func-clamp(24, 375, 32, 1440); //24 33
   // Typography
   @include fonts.main-heading;
   text-align: center;
@@ -64,4 +64,8 @@ body {
 .description {
   @include fonts.description;
   text-align: center;
+}
+
+.sign-up {
+  width: 100%;
 }
