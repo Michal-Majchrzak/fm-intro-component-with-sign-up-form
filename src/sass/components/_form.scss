@@ -6,6 +6,30 @@
   flex-direction: column;
   gap: st.linear-func-clamp(16, 375, 20, 1440);
 
+  .form-item-wrapper {
+    position: relative;
+  }
+
+  .form-item-wrapper > label {
+    display: block;
+    position: absolute;
+    left: st.linear-func-clamp(20, 375, 32, 1440);
+    top: 1.1em;
+    @include generic.font-input-field;
+    color: var(--color-text-input-placeholder);
+  }
+
+  .form-item-wrapper > label.moved {
+    // Layout
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -1.75em;
+    // Typography
+    @include generic.font-terms-and-services;
+    color: var(--color-text-input-placeholder);
+  }
+
   .form-item {
     // Appearance
     border-radius: st.px2rem(5);
@@ -26,6 +50,7 @@
     }
 
   }
+
   .error {
     // Layout
     position: relative;
@@ -45,8 +70,7 @@
       right: st.px2rem(27);
     }
     
-    &::after {
-      content: "Field cannot be empty";
+    .validation-message {
       display: block;
       padding-top: st.px2rem(4);
       width: 100%;

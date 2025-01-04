@@ -23,17 +23,25 @@
       </div>
       <div class="card">
         <form class="form" action="">
-          <span class="form-item-wrapper error">
-            <input class="form-item" type="text" name="" id="" placeholder="First Name">
+          <span class="form-item-wrapper">
+            <label for="first-name">First Name</label>
+            <input class="form-item" type="text" name="first-name" id="first-name" aria-labelledby="first-name-validation" required>
+            <span class="sr-only validation-message" id="first-name-validation">First Name cannot be empty</span>
           </span>
-          <span class="form-item-wrapper error">
-            <input class="form-item" type="text" name="" id="" placeholder="Last Name">
+          <span class="form-item-wrapper">
+            <label for="last-name">Last Name</label>
+            <input class="form-item" type="text" name="" id="last-name" aria-labelledby="last-name-validation" required>
+            <span class="sr-only validation-message" id="last-name-validation">Last Name cannot be empty</span>
           </span>
-          <span class="form-item-wrapper error">
-            <input class="form-item" type="email" name="" id="" placeholder="Email Address">
+          <span class="form-item-wrapper">
+            <label for="email">Email Address</label>
+            <input class="form-item" type="email" name="" id="email" aria-labelledby="email-validation" required>
+            <span class="sr-only validation-message" id="email-validation">Email Address cannot be empty</span>
           </span>
-          <span class="form-item-wrapper error">
-            <input class="form-item" type="password" name="" id="" placeholder="Password">
+          <span class="form-item-wrapper">
+            <label for="password">Password</label>
+            <input class="form-item" type="password" name="" id="password" aria-labelledby="password-validation" required>
+            <span class="sr-only validation-message" id="password-validation">Password cannot be empty</span>
           </span>
           <button class="btn" type="submit">Claim your free trial</button>
         </form>
@@ -43,5 +51,6 @@
       </div>
     </div>
   </main>
+  <script src="src/scripts/main.js"></script>
 </body>
 </html>
