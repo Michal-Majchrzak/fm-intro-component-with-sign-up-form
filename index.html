@@ -22,29 +22,56 @@
         <span class="text-bold">Try it free 7 days</span> then $20/mo. thereafter
       </div>
       <div class="card">
-        <form class="form" action="">
+        <form class="sign-up-form" action="/" method="post">
+          <ul class="form-list">
+            <li class="form-list-item">
+              <label for="first-name" class="form-item-label">First Name</label>
+              <input class="form-item" type="text" name="first-name" id="first-name" autocomplete="given-name" aria-describedby="first-name-validation-text" required data-empty>
+              <span id="first-name-validation-text" class="validation-message"></span>
+            </li>
+            <li class="form-list-item">
+              <label for="last-name" class="form-item-label">Last Name</label>
+              <input class="form-item" type="text" name="last-name" id="last-name" autocomplete="family-name" aria-describedby="last-name-validation-text" required data-empty>
+              <span id="last-name-validation-text" class="validation-message"></span>
+            </li>
+            <li class="form-list-item">
+              <label for="email" class="form-item-label">Email Address</label>
+              <input class="form-item" type="email" name="email" id="email" autocomplete="email" aria-describedby="email-validation-text" required data-empty>
+              <span id="email-validation-text" class="validation-message"></span>
+            </li>
+            <li class="form-list-item">
+              <label for="password" class="form-item-label">Password</label>
+              <input class="form-item" type="password" name="password" id="password" aria-describedby="password-validation-text" required data-empty>
+              <span id="password-validation-text" class="validation-message"></span>
+            </li>
+            <li class="form-list-item">
+              <button type="submit" class="btn">Claim your free trial</button>
+            </li>
+          </ul>
+        </form>
+        <!-- <form class="form" action="">
           <span class="form-item-wrapper">
             <label for="first-name">First Name</label>
-            <input class="form-item" type="text" name="first-name" id="first-name" aria-labelledby="first-name-validation" required>
+            <input class="form-item" type="text" data-empty name="first-name" id="first-name" aria-labelledby="first-name-validation" required>
             <span class="sr-only validation-message" id="first-name-validation">First Name cannot be empty</span>
           </span>
           <span class="form-item-wrapper">
             <label for="last-name">Last Name</label>
-            <input class="form-item" type="text" name="" id="last-name" aria-labelledby="last-name-validation" required>
+            <input class="form-item" type="text" data-empty name="last-name" id="last-name" aria-labelledby="last-name-validation" required>
             <span class="sr-only validation-message" id="last-name-validation">Last Name cannot be empty</span>
           </span>
           <span class="form-item-wrapper">
             <label for="email">Email Address</label>
-            <input class="form-item" type="email" name="" id="email" aria-labelledby="email-validation" required>
+            <input class="form-item" type="email" data-empty name="email" id="email" aria-labelledby="email-validation" required>
             <span class="sr-only validation-message" id="email-validation">Email Address cannot be empty</span>
           </span>
           <span class="form-item-wrapper">
             <label for="password">Password</label>
-            <input class="form-item" type="password" name="" id="password" aria-labelledby="password-validation" required>
+            <input class="form-item" type="password" data-empty name="password" id="password" aria-labelledby="password-validation" required>
             <span class="sr-only validation-message" id="password-validation">Password cannot be empty</span>
           </span>
           <button class="btn" type="submit">Claim your free trial</button>
-        </form>
+        </form> -->
         <p class="card__terms-and-services">
           By clicking the button, you are agreeing to our <span class="text-accent text-bold">Terms and Services</span>
         </p>

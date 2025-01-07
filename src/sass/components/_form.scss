@@ -1,33 +1,21 @@
 @use "../sass-toolkit" as st;
 @use "../generic";
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: st.linear-func-clamp(16, 375, 20, 1440);
+.sign-up-form {
+  ul.form-list {
+    //Appearance
+    list-style: none;
+    //Layout
+    display: flex;
+    flex-direction: column;
+    gap: st.linear-func-clamp(16, 375, 20, 1440);
+    padding: 0;
 
-  .form-item-wrapper {
-    position: relative;
-  }
-
-  .form-item-wrapper > label {
-    display: block;
-    position: absolute;
-    left: st.linear-func-clamp(20, 375, 32, 1440);
-    top: 1.1em;
-    @include generic.font-input-field;
-    color: var(--color-text-input-placeholder);
-  }
-
-  .form-item-wrapper > label.moved {
-    // Layout
-    display: block;
-    position: absolute;
-    left: 0;
-    top: -1.75em;
-    // Typography
-    @include generic.font-terms-and-services;
-    color: var(--color-text-input-placeholder);
+    & > li.form-list-item {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
   }
 
   .form-item {
@@ -36,50 +24,58 @@
     border: st.px2rem(1) solid var(--color-border-input);
     // Layout
     padding: 1em st.linear-func-clamp(20, 375, 32, 1440);
-    width: 100%;
     // Typography
     @include generic.font-input-field;
     color: var(--color-text-input);
-    
-    &::placeholder {
-      color: var(--color-text-input-placeholder);
-    }
 
     &:focus-visible {
       outline: st.px2rem(1) solid var(--color-background-note);
     }
-
   }
 
-  .error {
-    // Layout
-    position: relative;
-
-    .form-item {
-      // Appearance
-      outline: st.px2rem(2) solid var(--color-text-accent);
-      // Typography
-      color: var(--color-text-accent);
-    }
-
-    &::before {
-      content: url("../assets/images/icon-error.svg");
-      display: block;
-      position: absolute;
-      top: st.px2rem(16);
-      right: st.px2rem(27);
-    }
-    
-    .validation-message {
-      display: block;
-      padding-top: st.px2rem(4);
-      width: 100%;
-      // Typography
-      @include generic.font-terms-and-services; //change font name to generic (now used in two elements)
-      line-height: normal; // temp
-      color: var(--color-text-accent);
-      font-style: italic;
-      text-align: right;
-    }
+  .invalid {
+    outline: st.px2rem(2) solid var(--color-text-accent);
+    // Typography
+    color: var(--color-text-accent);
   }
+
+  .invalid + .validation-message::before {
+    content: url("../assets/images/icon-error.svg");
+    display: block;
+    position: absolute;
+    top: st.px2rem(16);
+    right: st.px2rem(27);
+  }
+
+  .validation-message {
+    //Layout
+    display: block;
+    padding-top: st.px2rem(4);
+    // Typography
+    @include generic.font-terms-and-services; //change font name to generic (now used in two elements)
+    line-height: normal; // temp
+    color: var(--color-text-accent);
+    font-style: italic;
+    text-align: right;
+  }
+
+  .form-item-label {
+    position: absolute;
+    left: st.linear-func-clamp(20, 375, 32, 1440);
+    top: 1.1em;
+    // Typography
+    @include generic.font-input-field;
+    color: var(--color-text-input-placeholder);
+  }
+
+  .form-item-label.moved {
+    position: absolute;
+    left: 0;
+    top: -1.75em;
+    // Typography
+    @include generic.font-terms-and-services;
+    color: var(--color-text-input-placeholder);
+  }
+
+
 }

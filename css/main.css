@@ -129,7 +129,6 @@ body {
   border: none;
   box-shadow: var(--box-shadow-btn);
   transition: background-color 250ms ease-in;
-  width: 100%;
   padding: 1em;
   font-size: 0.9375rem;
   line-height: 1.7;
@@ -143,16 +142,54 @@ body {
   background-color: var(--color-background-btn-hover);
 }
 
-.form {
+.sign-up-form ul.form-list {
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: clamp(1rem, 0.3755868545vw + 0.911971831rem, 1.25rem);
+  padding: 0;
 }
-.form .form-item-wrapper {
+.sign-up-form ul.form-list > li.form-list-item {
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
-.form .form-item-wrapper > label {
+.sign-up-form .form-item {
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid var(--color-border-input);
+  padding: 1em clamp(1.25rem, 1.1267605634vw + 0.985915493rem, 2rem);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.85;
+  letter-spacing: 0.015625rem;
+  color: var(--color-text-input);
+}
+.sign-up-form .form-item:focus-visible {
+  outline: 0.0625rem solid var(--color-background-note);
+}
+.sign-up-form .invalid {
+  outline: 0.125rem solid var(--color-text-accent);
+  color: var(--color-text-accent);
+}
+.sign-up-form .invalid + .validation-message::before {
+  content: url("../assets/images/icon-error.svg");
   display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1.6875rem;
+}
+.sign-up-form .validation-message {
+  display: block;
+  padding-top: 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: clamp(1.3125rem, 0.4694835681vw + 1.2024647887rem, 1.625rem);
+  line-height: normal;
+  color: var(--color-text-accent);
+  font-style: italic;
+  text-align: right;
+}
+.sign-up-form .form-item-label {
   position: absolute;
   left: clamp(1.25rem, 1.1267605634vw + 0.985915493rem, 2rem);
   top: 1.1em;
@@ -162,8 +199,7 @@ body {
   letter-spacing: 0.015625rem;
   color: var(--color-text-input-placeholder);
 }
-.form .form-item-wrapper > label.moved {
-  display: block;
+.sign-up-form .form-item-label.moved {
   position: absolute;
   left: 0;
   top: -1.75em;
@@ -171,49 +207,6 @@ body {
   font-weight: 500;
   line-height: clamp(1.3125rem, 0.4694835681vw + 1.2024647887rem, 1.625rem);
   color: var(--color-text-input-placeholder);
-}
-.form .form-item {
-  border-radius: 0.3125rem;
-  border: 0.0625rem solid var(--color-border-input);
-  padding: 1em clamp(1.25rem, 1.1267605634vw + 0.985915493rem, 2rem);
-  width: 100%;
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.85;
-  letter-spacing: 0.015625rem;
-  color: var(--color-text-input);
-}
-.form .form-item::placeholder {
-  color: var(--color-text-input-placeholder);
-}
-.form .form-item:focus-visible {
-  outline: 0.0625rem solid var(--color-background-note);
-}
-.form .error {
-  position: relative;
-}
-.form .error .form-item {
-  outline: 0.125rem solid var(--color-text-accent);
-  color: var(--color-text-accent);
-}
-.form .error::before {
-  content: url("../assets/images/icon-error.svg");
-  display: block;
-  position: absolute;
-  top: 1rem;
-  right: 1.6875rem;
-}
-.form .error .validation-message {
-  display: block;
-  padding-top: 0.25rem;
-  width: 100%;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  line-height: clamp(1.3125rem, 0.4694835681vw + 1.2024647887rem, 1.625rem);
-  line-height: normal;
-  color: var(--color-text-accent);
-  font-style: italic;
-  text-align: right;
 }
 
 @media (min-width: 52.5rem) {

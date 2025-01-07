@@ -1,30 +1,44 @@
+const validationMessages = {
+  // ref. => [input attr:name] : message
+  "first-name" : "First Name cannot be empty",
+  "last-name" : "Last Name cannot be empty",
+  "email" : "Looks like this is not an email",
+  "password" : "Password cannot be empty"
+}
+
+document.addEventListener("blur", event => {
+  const inputName = event.target.name;
+  const isValid = event.target.validity.valid;
+  const validationTextId = event.target.getAttribute("aria-describedby");
+  const message = validationMessages[inputName];
+  const validationText = validationTextId ? document.getElementById(validationTextId) : false;
+
+  if(validationText && message && !isValid) {
+    validationText.innerText = message;
+    event.target.classList.add("invalid");
+  } else {
+    validationText.innerText = "";
+    event.target.classList.remove("invalid");
+  }
+}, true);
+
 const inputFields = document.querySelectorAll("input.form-item");
-const submitBtn = document.querySelector(".btn[type=submit]");
 
 inputFields.forEach(input => {
-  // Check if some text already was instered into input
+  const label = document.querySelector(`label[for=${input.id}]`);
+
+  // Check if text wasn't already entered into field.
+  // This text wouldn't trigger 'input' event before
+  // user change something.
   if(input.value != "") {
-    input.labels[0].classList.add("moved");
+    label.classList.add("moved");
   }
 
-  // Subscribe to event 'input'
-  input.addEventListener("input", event => {
-    if(event.target.value != "") {
-      event.target.labels[0].classList.add("moved");
+  input.addEventListener("input", event => {  
+    if (event.target.value != "") {
+      label.classList.add('moved');
     } else {
-      event.target.labels[0].classList.remove("moved");
-    }
-  });
-});
-
-submitBtn.addEventListener("click", event => {
-  inputFields.forEach(field => {
-    if (field.checkValidity() == false) {
-      field.parentNode.classList.add("error");
-      field.parentNode.getElementsByClassName("validation-message")[0].classList.remove("sr-only");
-    } else {
-      field.parentNode.classList.remove("error");
-      field.parentNode.getElementsByClassName("validation-message")[0].classList.add("sr-only");
+      label.classList.remove('moved');
     }
   });
 });
