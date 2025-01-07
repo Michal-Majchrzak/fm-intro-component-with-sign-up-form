@@ -17,7 +17,7 @@
   letter-spacing: st.px2rem(0.25);
 }
 
-@mixin terms-and-services {
+@mixin text-xs {
   font-size: st.px2rem(11);
   font-weight: 500;
   line-height: st.linear-func-clamp(21, 375, 26, 1440); // 21 26 

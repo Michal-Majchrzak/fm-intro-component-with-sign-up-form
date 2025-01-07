@@ -3,7 +3,7 @@
 
 .card {
   // Appearance
-  background-color: white; // use var 
+  background-color: var(--color-background-card);
   border-radius: st.px2rem(10);
   box-shadow: var(--box-shadow-note);
   // Layout
@@ -14,7 +14,7 @@
     padding: 0 st.px2rem(15);
     margin-top: st.px2rem(8);
     // Typography
-    @include generic.font-terms-and-services;
+    @include generic.font-text-xs;
     text-align: center;
     color: var(--color-text-terms);
   }

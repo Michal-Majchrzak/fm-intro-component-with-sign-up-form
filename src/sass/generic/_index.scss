@@ -6,6 +6,7 @@ $colors: (
   "background-note": hsl(248, 33%, 49%),
   "background-btn" : hsl(154, 59%, 51%),
   "background-btn-hover": hsl(154, 65%, 68%),
+  "background-card" : hsl(0, 0%, 100%),
   "border-input": hsl(0, 0%, 87%),
   "text-main": hsl(0, 0%, 100%),
   "text-input-placeholder": hsla(248, 9%, 26%, 0.75),
@@ -30,19 +31,17 @@ $colors: (
 
 body {
   // Appearance
-  background-image: url("../../../assets/images/bg-intro-desktop.png");
+  background-image: url("../assets/images/bg-intro-desktop.png");
   background-position-x: 14px;
   background-color: var(--color-text-accent);
   // Layout
   display: flex;
   align-items: center;
-  padding: st.linear-func-clamp(88, 375, 121, 1440) st.linear-func-clamp(24, 375, 164, 1440);
+  padding: st.linear-func-clamp(77, 768, 88, 375) st.linear-func-clamp(24, 375, 48, 480);
   min-height: 100dvh;
   // Typography
   color: var(--color-text-main);
 }
-
-@include st.access-sr-only-class;
 
 .text-bold {
   font-weight: 700;

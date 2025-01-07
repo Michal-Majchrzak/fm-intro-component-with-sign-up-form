@@ -6,22 +6,6 @@ const validationMessages = {
   "password" : "Password cannot be empty"
 }
 
-document.addEventListener("blur", event => {
-  const inputName = event.target.name;
-  const isValid = event.target.validity.valid;
-  const validationTextId = event.target.getAttribute("aria-describedby");
-  const message = validationMessages[inputName];
-  const validationText = validationTextId ? document.getElementById(validationTextId) : false;
-
-  if(validationText && message && !isValid) {
-    validationText.innerText = message;
-    event.target.classList.add("invalid");
-  } else {
-    validationText.innerText = "";
-    event.target.classList.remove("invalid");
-  }
-}, true);
-
 const inputFields = document.querySelectorAll("input.form-item");
 
 inputFields.forEach(input => {
@@ -41,4 +25,20 @@ inputFields.forEach(input => {
       label.classList.remove('moved');
     }
   });
+
+  input.addEventListener("blur", event => {
+    const inputName = event.target.name;
+    const isValid = event.target.validity.valid;
+    const validationTextId = event.target.getAttribute("aria-describedby");
+    const message = validationMessages[inputName];
+    const validationText = validationTextId ? document.getElementById(validationTextId) : false;
+  
+    if(validationText && message && !isValid) {
+      validationText.innerText = message;
+      event.target.classList.add("invalid");
+    } else {
+      validationText.innerText = "";
+      event.target.classList.remove("invalid");
+    }
+  }, true);
 });

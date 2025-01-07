@@ -34,6 +34,7 @@
   }
 
   .invalid {
+    // Appearance
     outline: st.px2rem(2) solid var(--color-text-accent);
     // Typography
     color: var(--color-text-accent);
@@ -47,13 +48,17 @@
     right: st.px2rem(27);
   }
 
+  .invalid + .validation-message {
+    // Layout
+    padding-top: st.px2rem(4);
+  }
+
   .validation-message {
     //Layout
     display: block;
-    padding-top: st.px2rem(4);
     // Typography
-    @include generic.font-terms-and-services; //change font name to generic (now used in two elements)
-    line-height: normal; // temp
+    @include generic.font-text-xs;
+    line-height: normal;
     color: var(--color-text-accent);
     font-style: italic;
     text-align: right;
@@ -73,7 +78,7 @@
     left: 0;
     top: -1.75em;
     // Typography
-    @include generic.font-terms-and-services;
+    @include generic.font-text-xs;
     color: var(--color-text-input-placeholder);
   }
 

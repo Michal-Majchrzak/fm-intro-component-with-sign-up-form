@@ -9,7 +9,7 @@
   box-shadow: var(--box-shadow-btn);
   transition: background-color 250ms ease-in;
   //Layout
-  padding: 1em; // for mobie 15.4% desktop 29.5%
+  padding: 1em;
   //Typography
   @include generic.font-note;
   font-weight: 600;

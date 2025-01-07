@@ -7,9 +7,10 @@
   border-radius: st.px2rem(10);
   box-shadow: var(--box-shadow-note);
   //Layout
-  padding: 1.13em 20.45%;
+  padding: 1.13em 20%;
   margin-bottom: 1.5rem;
   // Typography
   @include generic.font-note;
+  letter-spacing: st.px2rem(0.3);
   text-align: center;
 }

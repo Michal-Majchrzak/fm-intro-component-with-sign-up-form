@@ -27,6 +27,7 @@ input, button, textarea, select {
   --color-background-note: hsl(248, 33%, 49%);
   --color-background-btn: hsl(154, 59%, 51%);
   --color-background-btn-hover: hsl(154, 65%, 68%);
+  --color-background-card: hsl(0, 0%, 100%);
   --color-border-input: hsl(0, 0%, 87%);
   --color-text-main: hsl(0, 0%, 100%);
   --color-text-input-placeholder: hsla(248, 9%, 26%, 0.75);
@@ -40,28 +41,14 @@ input, button, textarea, select {
 }
 
 body {
-  background-image: url("../../../assets/images/bg-intro-desktop.png");
+  background-image: url("../assets/images/bg-intro-desktop.png");
   background-position-x: 14px;
   background-color: var(--color-text-accent);
   display: flex;
   align-items: center;
-  padding: clamp(5.5rem, 3.0985915493vw + 4.7737676056rem, 7.5625rem) clamp(1.5rem, 13.1455399061vw + -1.5809859155rem, 10.25rem);
+  padding: clamp(4.8125rem, -2.7989821883vw + 6.1560114504rem, 5.5rem) clamp(1.5rem, 22.8571428571vw + -3.8571428571rem, 3rem);
   min-height: 100dvh;
   color: var(--color-text-main);
-}
-
-.sr-only {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  -webkit-clip-path: inset(50%);
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute;
-  padding: 0;
-  margin: -1px;
 }
 
 .text-bold {
@@ -97,7 +84,7 @@ body {
 }
 
 .card {
-  background-color: white;
+  background-color: var(--color-background-card);
   border-radius: 0.625rem;
   box-shadow: var(--box-shadow-note);
   padding: clamp(1.5rem, 1.5023474178vw + 1.1478873239rem, 2.5rem);
@@ -116,10 +103,11 @@ body {
   background-color: var(--color-background-note);
   border-radius: 0.625rem;
   box-shadow: var(--box-shadow-note);
-  padding: 1.13em 20.45%;
+  padding: 1.13em 20%;
   margin-bottom: 1.5rem;
   font-size: 0.9375rem;
   line-height: 1.7;
+  letter-spacing: 0.01875rem;
   text-align: center;
 }
 
@@ -178,9 +166,11 @@ body {
   top: 1rem;
   right: 1.6875rem;
 }
+.sign-up-form .invalid + .validation-message {
+  padding-top: 0.25rem;
+}
 .sign-up-form .validation-message {
   display: block;
-  padding-top: 0.25rem;
   font-size: 0.6875rem;
   font-weight: 500;
   line-height: clamp(1.3125rem, 0.4694835681vw + 1.2024647887rem, 1.625rem);
